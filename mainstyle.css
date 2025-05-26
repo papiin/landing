@@ -1452,7 +1452,7 @@ body {
   }
 
   .process-step-card {
-    width: calc(100% - 48px);
+    width: calc(100% - 20px);
     padding: 32px;
     min-height: 320px;
     box-sizing: border-box;
@@ -1524,12 +1524,6 @@ body {
     align-items: center;
     width: 100%;
     box-sizing: border-box;
-  }
-
-  .process-steps-container {
-    flex-direction: column;
-    gap: 24px;
-    padding: 0 24px;
   }
 
   .testimonials-inner-container {
