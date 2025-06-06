@@ -942,6 +942,19 @@ body {
   word-wrap: break-word;
   border: none;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.learn-more-button:hover {
+  background: #d42d18;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(241, 52, 28, 0.2);
+}
+
+.learn-more-button:active {
+  background: #c12a16;
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(241, 52, 28, 0.2);
 }
 
 
@@ -1324,7 +1337,7 @@ body {
   background: #F1341C;
   border: none;
   width: 48px;
-  height: 48px;
+  height: 51px;
   display: flex;
   align-items: center;
   justify-content: center;
