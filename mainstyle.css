@@ -1514,9 +1514,9 @@ body {
 
   .testimonial-card {
     width: 100%;
-    max-width: 360px;
+    max-width: 300px;  /* 從 360px 減少到 320px */
     flex: none;
-    padding: 32px 24px;  /* 增加上下內距 */
+    padding: 32px 24px;
   }
 
   .testimonial-header {
@@ -1617,11 +1617,13 @@ body {
 
   .custom-banner-search {
     width: 100%;
+    white-space: nowrap;  /* 防止文字換行 */
   }
 
   .custom-banner-search span {
     font-size: 16px;
     padding: 12px;
+    white-space: nowrap;  /* 防止文字換行 */
   }
 
   .custom-banner-wave {
