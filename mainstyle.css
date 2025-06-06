@@ -9,10 +9,11 @@ body {
 
 .page-container {
   width: 100%;
-  max-width: 100vw;
-  margin: 0 auto;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
   background: #F7F7F7;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -123,23 +124,18 @@ body {
 /* Hero Section */
 .hero-section {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  background: #0A111A;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background: #0A111A;  /* 深灰色背景 */
 }
 
 .hero-inner {
   width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding-left: 32px;
-  padding-right: 32px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 48px;
+  max-width: 1125px;  /* 限制最大寬度 */
+  margin: 0 auto;  /* 置中 */
+  padding: 0;
 }
 
 .hero-text-content {
@@ -342,10 +338,9 @@ body {
 
 .hero-banner {
   width: 100%;
-  max-width: 450px;
   height: auto;
-  object-fit: contain;
   display: block;
+  object-fit: cover;
 }
 
 /* Remove old circle and overlay styles */
@@ -1511,44 +1506,71 @@ body {
   }
 
   .testimonial-cards-container {
-    padding: 0;
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-  }
-
-  .testimonial-cards-container {
-    min-width: 0;
-    width: 100%;
     flex-direction: column;
     align-items: center;
-    gap: 28px;
+    gap: 40px;  /* 增加卡片間距 */
     padding: 0;
-    overflow: visible;
-    justify-content: center;
-    margin: 0 auto;
-  }
-
-  .testimonial-cards-container::-webkit-scrollbar {
-    display: none;
   }
 
   .testimonial-card {
     width: 100%;
     max-width: 360px;
-    min-height: auto;
-    margin: 0 auto;
     flex: none;
-    box-sizing: border-box;
+    padding: 32px 24px;  /* 增加上下內距 */
   }
 
-  .testimonial-corner-decoration {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 32px;
-    height: 32px;
-    z-index: 2;
+  .testimonial-header {
+    padding-bottom: 16px;  /* 增加頭像與文字的間距 */
+  }
+
+  .testimonial-quote {
+    margin-top: 16px;  /* 增加引言與頭像的間距 */
+  }
+
+  .testimonial-quote p {
+    font-size: 15px;  /* 稍微增加字體大小 */
+    line-height: 1.6;  /* 增加行高 */
+  }
+
+  .testimonials-section {
+    padding: 16px 0;  /* 減少上下間距 */
+  }
+
+  .video-types-section {
+    padding: 16px 0;  /* 減少上下間距 */
+  }
+
+  .process-section {
+    padding: 16px 0;  /* 減少上下間距 */
+  }
+
+  .cooperation-section {
+    padding: 16px 0 0 0;  /* 減少上間距 */
+    margin-bottom: 60px;  /* 減少下間距 */
+  }
+
+  .knowledge-section {
+    padding: 16px 0;  /* 減少上下間距 */
+  }
+
+  .testimonials-inner-container {
+    padding: 0 24px;
+    gap: 24px;  /* 減少標題與內容的間距 */
+  }
+
+  .video-types-inner-container {
+    padding: 0 24px;
+    gap: 24px;  /* 減少標題與內容的間距 */
+  }
+
+  .process-inner-container {
+    padding: 0 24px;
+    gap: 24px;  /* 減少標題與內容的間距 */
+  }
+
+  .knowledge-inner-container {
+    padding: 0 24px;
+    gap: 24px;  /* 減少標題與內容的間距 */
   }
 
   .custom-banner-section {
@@ -1609,37 +1631,6 @@ body {
     margin-top: -28px;
     z-index: 0;
   }
-
-  .testimonials-section {
-    padding: 24px 0;  /* 減少上下間距 */
-  }
-
-  .video-types-section {
-    padding: 24px 0;  /* 減少上下間距 */
-  }
-
-  .testimonials-inner-container {
-    padding: 0 24px;
-    gap: 40px;
-  }
-
-  .video-types-inner-container {
-    padding: 0 24px;
-    gap: 32px;  /* 減少標題與內容的間距 */
-  }
-
-  .testimonial-cards-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-    padding: 0;
-  }
-
-  .testimonial-card {
-    width: 100%;
-    max-width: 360px;
-    flex: none;
-  }
 }
 
 /* Knowledge Section */
@@ -1694,6 +1685,7 @@ body {
   width: 100%;
   height: 200px;
   overflow: hidden;
+  margin-bottom: 10px;
 }
 
 .knowledge-image {
@@ -1702,11 +1694,16 @@ body {
   object-fit: cover;
   display: block;
   border-radius: 0px;
+  transition: transform 0.3s ease;
+}
+
+.knowledge-card-title:hover .knowledge-image {
+  transform: scale(1.05);
 }
 
 .knowledge-tag {
   display: block;
-  margin: 10px 0 0 4px;
+  margin: 10px 0 0 0;
   color: #F1341C;
   font-size: 14px;
   font-weight: 400;
@@ -1718,14 +1715,14 @@ body {
 }
 
 .knowledge-card-title {
-  font-size: 16px;
-  font-weight: 400;
-  color: #252B33;
-  margin: 10px 4px 16px 4px;
-  line-height: 1.3;
   text-decoration: none;
   display: block;
   transition: color 0.2s ease;
+  color: #252B33;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.3;
+  margin: 10px 0 16px 0;
 }
 
 .knowledge-card-title:hover {
@@ -1988,61 +1985,17 @@ body {
 
 @media (max-width: 900px) {
   .hero-inner {
-    flex-direction: column-reverse;
+    flex-direction: column;
     gap: 32px;
-    padding: 32px 5vw;
-    max-width: 100vw;
+    padding: 0;
+    max-width: 100%;
     align-items: stretch;
   }
-  .hero-text-content {
-    gap: 24px;
-    width: 100%;
-    align-items: flex-start;
-  }
-  .hero-title {
-    font-size: 38px;
-    line-height: 1.2;
-    text-align: left;
-    margin-bottom: -2px;
-  }
-  .hero-subtitle {
-    font-size: 20px;
-    line-height: 1.3;
-    text-align: left;
-    margin-bottom: -2px;
-  }
-  .budget-search-container {
-    width: 80%;
-    margin: 0;
-  }
-  .budget-input-wrapper {
-    width: 100%;
-  }
-  .budget-input-wrapper div {
-    font-size: 14px;
-    padding: 8px 12px;
-  }
-  .hero-image-gallery {
-    flex: none;
-    width: 100%;
-    height: auto;
-    justify-content: center;
-    margin-top: 0;
-  }
+  
   .hero-banner {
-    max-width: 80vw;
-    height: auto;
-  }
-  .custom-banner-search {
     width: 100%;
-  }
-  .custom-banner-search div {
-    font-size: 16px;
-    padding: 8px 12px;
-  }
-  .search-btn {
-    width: 46px;
-    height: 46px;
+    max-width: 100%;
+    height: auto;
   }
 }
 
